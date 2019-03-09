@@ -1,0 +1,6 @@
+#!/bin/bash
+source ~/shell/aliases/docker
+source ~/shell/aliases/git
+source ~/shell/aliases/laravel
+source ~/shell/aliases/yarn
+source ~/shell/aliases/ship

@@ -1,0 +1,46 @@
+#!/bin/bash
+# replace with docker
+alias art='php artisan'
+alias artisan='php artisan'
+alias migrate='php artisan migrate'
+alias migrate:fresh='php artisan migrate:fresh'
+alias migrate:refresh='php artisan migrate:refresh'
+alias migrate:rollback='php artisan migrate:rollback'
+alias monitor:queries='php artisan monitor:queries'
+alias monitor:laravel='php artisan monitor:laravel'
+alias queries='php artisan monitor:queries'
+alias tinker='php artisan tinker'
+alias route:list='php artisan route:list'
+
+alias migrator='php artisan migrator'
+alias migrator:rollback='php artisan migrator:rollback'
+alias migrator:fresh='php artisan migrator:fresh'
+alias queue='php artisan queue:work --timeout=0 --tries=3'
+alias queue:welcome='php artisan queue:work --queue=welcome --timeout=0 --tries=3'
+
+# replace with exchange
+alias serve='php artisan serve'
+
+# replace with docker/exchange
+alias refresh='php artisan migrator:refresh —seed'
+alias rollback='php artisan migrator:rollback'
+alias fresh='php artisan migrator:fresh'
+
+# nova
+alias nova:action="php artisan nova:action"
+alias nova:asset="php artisan nova:asset"
+alias nova:base-resource="php artisan nova:base-resource"
+alias nova:card="php artisan nova:card"
+alias nova:field="php artisan nova:field"
+alias nova:filter="php artisan nova:filter"
+alias nova:install="php artisan nova:install"
+alias nova:lens="php artisan nova:lens"
+alias nova:partition="php artisan nova:partition"
+alias nova:publish="php artisan nova:publish"
+alias nova:resource="php artisan nova:resource"
+alias nova:resource-tool="php artisan nova:resource-tool"
+alias nova:theme="php artisan nova:theme"
+alias nova:tool="php artisan nova:tool"
+alias nova:trend="php artisan nova:trend"
+alias nova:user="php artisan nova:user"
+alias nova:value="php artisan nova:value"

@@ -1,0 +1,15 @@
+#!/bin/bash
+parse_get_branch() {
+  git branch | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \1/'
+}
+
+alias am='git commit -am'
+alias ga='git add -A; git status'
+alias gc='git commit -m'
+alias gm='git commit -m'
+alias gl='git log'
+alias gfs='git flow feature start'
+alias gff='git flow feature finish'
+alias pull='git pull origin $(parse_get_branch)'
+alias push='git push origin  $(parse_get_branch)'
+alias gmodified='git ls-files --modified | xargs git add'

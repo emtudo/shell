@@ -1,0 +1,25 @@
+#!/bin/bash
+pullAndPushOnDevelopAndMaster () {
+  git checkout develop
+  git pull
+  git push origin develop
+  git checkout master
+  git merge develop
+  git push origin master
+  git checkout develop
+}
+
+alias dev='yarn dev'
+alias dev:beta='yarn dev:beta'
+alias dev:mobile='yarn dev:mobile'
+alias logs='yarn logs'
+alias start='yarn start --nolimit'
+alias build='yarn build --nolimit'
+alias prod='yarn prod --nolimit'
+alias hot='yarn hot --nolimit'
+
+alias release="pullAndPushOnDevelopAndMaster; yarn release"
+alias release:beta="pullAndPushOnDevelopAndMaster; yarn release:beta"
+alias release:desktop="pullAndPushOnDevelopAndMaster; yarn release:desktop"
+alias release:mobile="pullAndPushOnDevelopAndMaster; yarn release:mobile"
+alias deploy="pullAndPushOnDevelopAndMaster; yarn deploy"

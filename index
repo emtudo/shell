@@ -1,0 +1,6 @@
+#!/bin/bash
+source ~/shell/p1
+source ~/shell/path
+source ~/shell/aliases/index
+
+umask 027

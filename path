@@ -1,0 +1,10 @@
+#!/bin/bash
+PATH=$PATH:${HOME}/Bin
+PATH=$PATH:${HOME}/Bin/node/bin
+PATH=$PATH:~/.npm-global
+PATH=$PATH:~/.npm-global/bin
+PATH=$PATH:~/.config/composer/vendor/bin
+
+export PATH=${PATH}:${HOME}/android-sdk/sdk/platform-tools
+export PATH=${PATH}:${HOME}/android-sdk/sdk/tools
+export PATH=${PATH}:/opt/redis-desktop-manager
