@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 # replace with docker
 alias art='php artisan'
 alias artisan='php artisan'

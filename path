@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 PATH=$PATH:${HOME}/Bin
 PATH=$PATH:${HOME}/Bin/node/bin
 PATH=$PATH:~/.npm-global

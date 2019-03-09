@@ -1,2 +1,2 @@
-#!/bin/bash
+#!/bin/sh
 alias shell='ship :shell ${PWD##*/}'

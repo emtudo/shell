@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 source ~/shell/aliases/docker
 source ~/shell/aliases/git
 source ~/shell/aliases/laravel

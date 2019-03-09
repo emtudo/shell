@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 docker_status () {
   /etc/init.d/docker status | grep "Active: " | awk -F " " '{ print $2 }'
 }

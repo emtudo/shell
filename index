@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 source ~/shell/p1
 source ~/shell/path
 source ~/shell/aliases/index

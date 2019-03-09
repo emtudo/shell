@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 parse_get_branch() {
   git branch | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \1/'
 }
