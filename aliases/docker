@@ -38,7 +38,6 @@ alias migrator='docker-compose exec api php artisan migrator'
 alias migrator:rollback='docker-compose exec api php artisan migrator:rollback'
 alias migrator:fresh='docker-compose exec api php artisan migrator:fresh'
 alias fresh='docker-compose exec api php artisan migrator:fresh'
-alias composer='docker-compose exec api composer'
 
 # nova
 alias nova:action="docker-compose exec api php artisan nova:action"
