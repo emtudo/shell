@@ -1,0 +1,54 @@
+#!/bin/sh
+switchMicrophone () {
+  # get first device by param $1
+  # param = device's name or part of device's name
+  DEVICE=$(pacmd list-sources | grep -i "name:" | grep -i $1 | head -n 1 | grep -o "[^<]*$" | grep -o "[^>]*")
+
+  # set device
+  echo -e "Device selected: \e[32m${DEVICE}\e[39m"
+  pacmd set-default-source $DEVICE
+
+  # force mic
+  INDEX=$(pacmd list-sources | grep "* index" | cut -d ' ' -f 5-);
+  pacmd list-source-outputs | grep index | while read line
+  do
+    ORIGIN=$(echo $line | cut -f2 -d' ')
+    echo -e "Moving output from \e[32m${ORIGIN}\e[39m to \e[32m${INDEX}\e[39m => \e[32m${DEVICE}\e[39m";
+    pacmd move-source-output $ORIGIN $DEVICE
+  done
+}
+
+switchSound () {
+  # get first device by param $1
+  # param = device's name or part of device's name
+  DEVICE=$(pacmd list-sinks | grep -i "name:" | grep -i $1 | head -n 1 | grep -o "[^<]*$" | grep -o "[^>]*")
+
+  # set device
+  echo -e "Device selected: \e[32m${DEVICE}\e[39m"
+  pacmd set-default-sink $DEVICE
+
+  # force sound
+  INDEX=$(pacmd list-sinks | grep "* index" | cut -d ' ' -f 5-);
+  pacmd list-sink-inputs | grep index | while read line
+  do
+    ORIGIN=$(echo $line | cut -f2 -d' ')
+    echo -e "Moving input from \e[32m${ORIGIN}\e[39m to \e[32m${INDEX}\e[39m => \e[32m${DEVICE}\e[39m";
+    pacmd move-sink-input $ORIGIN $DEVICE
+  done
+}
+
+alias set-sound="switchSound"
+alias set-mic="switchMicrophone"
+alias set-microphone="switchMicrophone"
+
+# use (sound):
+# set-sound pci
+# set-sound usb
+# set-sound alsa_output.usb-Blue_Microphones_Yeti_Stereo_Microphone_TS_2018_06_25_12465-00.iec958-stereo
+# set-sound alsa_output.pci-0000_00_1f.3.analog-stereo
+
+# use (mic):
+# set-mic hd
+# set-mic blue
+# set-mic alsa_input.usb-046d_HD_Pro_Webcam_C920_F322D19F-02.iec958-stereo
+# set-mic alsa_output.usb-Blue_Microphones_Yeti_Stereo_Microphone_TS_2018_06_25_12465-00.analog-stereo.monitor
