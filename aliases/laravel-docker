@@ -1,3 +1,4 @@
+#!/bin/sh
 alias art='docker-compose exec app php artisan'
 alias artisan='docker-compose exec app php artisan'
 alias migrate='docker-compose exec app php artisan migrate'
