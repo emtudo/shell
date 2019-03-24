@@ -1,10 +1,10 @@
 #!/bin/sh
-#source ~/shell/aliases/docker
+source ~/shell/aliases/docker
 source ~/shell/aliases/git
 source ~/shell/aliases/laravel
 source ~/shell/aliases/yarn
 source ~/shell/aliases/ship
 source ~/shell/aliases/sound
 
-alias aliasdocker="source ~/shell/aliases/docker"
+alias laradocker="source ~/shell/aliases/laravel-docker"
 alias aliasclean="source ~/shell/index"
