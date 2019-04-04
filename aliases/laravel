@@ -44,3 +44,49 @@ alias nova:tool="php artisan nova:tool"
 alias nova:trend="php artisan nova:trend"
 alias nova:user="php artisan nova:user"
 alias nova:value="php artisan nova:value"
+
+#docker (dk-*)
+alias dk-art='php artisan'
+alias dk-artisan='php artisan'
+alias dk-migrate='php artisan migrate'
+alias dk-migrate:fresh='php artisan migrate:fresh'
+alias dk-migrate:refresh='php artisan migrate:refresh'
+alias dk-migrate:rollback='php artisan migrate:rollback'
+alias dk-monitor:queries='php artisan monitor:queries'
+alias dk-monitor:laravel='php artisan monitor:laravel'
+alias dk-queries='php artisan monitor:queries'
+alias dk-tinker='php artisan tinker'
+alias dk-route:list='php artisan route:list'
+
+alias dk-migrator='php artisan migrator'
+alias dk-migrator:rollback='php artisan migrator:rollback'
+alias dk-migrator:fresh='php artisan migrator:fresh'
+alias dk-queue='php artisan queue:work --timeout=0 --tries=3'
+alias dk-queue:welcome='php artisan queue:work --queue=welcome --timeout=0 --tries=3'
+
+# replace with exchange
+alias dk-serve='php artisan serve'
+
+# replace with docker/exchange
+alias dk-refresh='php artisan migrator:refresh —seed'
+alias dk-rollback='php artisan migrator:rollback'
+alias dk-fresh='php artisan migrator:fresh'
+
+# nova
+alias dk-nova:action="php artisan nova:action"
+alias dk-nova:asset="php artisan nova:asset"
+alias dk-nova:base-resource="php artisan nova:base-resource"
+alias dk-nova:card="php artisan nova:card"
+alias dk-nova:field="php artisan nova:field"
+alias dk-nova:filter="php artisan nova:filter"
+alias dk-nova:install="php artisan nova:install"
+alias dk-nova:lens="php artisan nova:lens"
+alias dk-nova:partition="php artisan nova:partition"
+alias dk-nova:publish="php artisan nova:publish"
+alias dk-nova:resource="php artisan nova:resource"
+alias dk-nova:resource-tool="php artisan nova:resource-tool"
+alias dk-nova:theme="php artisan nova:theme"
+alias dk-nova:tool="php artisan nova:tool"
+alias dk-nova:trend="php artisan nova:trend"
+alias dk-nova:user="php artisan nova:user"
+alias dk-nova:value="php artisan nova:value"
