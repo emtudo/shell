@@ -5,6 +5,6 @@ source ~/shell/aliases/laravel
 source ~/shell/aliases/yarn
 source ~/shell/aliases/ship
 source ~/shell/aliases/sound
+source ~/shell/aliases/laravel-docker
 
-alias laradocker="source ~/shell/aliases/laravel-docker"
 alias aliasclean="source ~/shell/index"
