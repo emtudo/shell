@@ -17,14 +17,12 @@ alias migrator:rollback='php artisan migrator:rollback'
 alias migrator:fresh='php artisan migrator:fresh'
 alias queue='php artisan queue:work --timeout=0 --tries=3'
 alias queue:welcome='php artisan queue:work --queue=welcome --timeout=0 --tries=3'
+alias refresh='php artisan migrate:refresh —seed'
+alias rollback='php artisan migrate:rollback'
+alias fresh='php artisan migrate:fresh'
 
 # replace with exchange
 alias serve='php artisan serve'
-
-# replace with docker/exchange
-alias refresh='php artisan migrator:refresh —seed'
-alias rollback='php artisan migrator:rollback'
-alias fresh='php artisan migrator:fresh'
 
 # nova
 alias nova:action="php artisan nova:action"

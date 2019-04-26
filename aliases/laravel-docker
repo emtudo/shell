@@ -9,8 +9,9 @@ laradocker () {
   alias migrate:fresh="docker exec -it $CONTAINER php artisan migrate:fresh"
   alias migrate:refresh="docker exec -it $CONTAINER php artisan migrate:refresh"
   alias migrate:rollback="docker exec -it $CONTAINER php artisan migrate:rollback"
-  alias refresh="docker exec -it $CONTAINER php artisan migrator:refresh —seed"
-  alias rollback="docker exec -it $CONTAINER php artisan migrator:rollback"
+  alias refresh="docker exec -it $CONTAINER php artisan migrate:refresh —seed"
+  alias rollback="docker exec -it $CONTAINER php artisan migrate:rollback"
+  alias fresh="docker exec -it $CONTAINER php artisan migrate:fresh"
   alias monitor:queries="docker exec -it $CONTAINER php artisan monitor:queries"
   alias monitor:laravel="docker exec -it $CONTAINER php artisan monitor:laravel"
   alias queries="docker exec -it $CONTAINER php artisan monitor:queries"
@@ -19,8 +20,7 @@ laradocker () {
   alias migrator="docker exec -it $CONTAINER php artisan migrator"
   alias migrator:rollback="docker exec -it $CONTAINER php artisan migrator:rollback"
   alias migrator:fresh="docker exec -it $CONTAINER php artisan migrator:fresh"
-  alias fresh="docker exec -it $CONTAINER php artisan migrator:fresh"
-
+  
   # nova
   alias nova:action="docker exec -it $CONTAINER php artisan nova:action"
   alias nova:asset="docker exec -it $CONTAINER php artisan nova:asset"
