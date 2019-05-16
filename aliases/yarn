@@ -17,9 +17,3 @@ alias start='yarn start --nolimit'
 alias build='yarn build --nolimit'
 alias prod='yarn prod --nolimit'
 alias hot='yarn hot --nolimit'
-
-alias release="pull_and_push_on_develop_and_master; yarn release"
-alias release:beta="pull_and_push_on_develop_and_master; yarn release:beta"
-alias release:desktop="pull_and_push_on_develop_and_master; yarn release:desktop"
-alias release:mobile="pull_and_push_on_develop_and_master; yarn release:mobile"
-alias deploy="pull_and_push_on_develop_and_master; yarn deploy"

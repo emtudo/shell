@@ -1,2 +1,0 @@
-#!/bin/sh
-alias shell='ship :shell ${PWD##*/}'

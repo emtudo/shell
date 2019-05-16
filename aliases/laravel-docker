@@ -20,7 +20,8 @@ laradocker () {
   alias migrator="docker exec -it $CONTAINER php artisan migrator"
   alias migrator:rollback="docker exec -it $CONTAINER php artisan migrator:rollback"
   alias migrator:fresh="docker exec -it $CONTAINER php artisan migrator:fresh"
-  
+  alias queue='docker exec -it $CONTAINER php artisan queue:work --timeout=0 --tries=3'
+
   # nova
   alias nova:action="docker exec -it $CONTAINER php artisan nova:action"
   alias nova:asset="docker exec -it $CONTAINER php artisan nova:asset"
