@@ -1,8 +1,7 @@
 #!/bin/sh
 npm_build_and_push() {
-   npm run prod && ga && gc 'npm run prod' && git push && cp .env.development .env && npm run prod
+   npm run prod && ga && gc 'npm run prod' && git push; cp .env.development .env && npm run prod
 }
-
 
 alias production-push="git checkout master && cp .env.production .env && npm_build_and_push"
 alias staging-push="git checkout staging && cp .env.staging .env && npm_build_and_push"
