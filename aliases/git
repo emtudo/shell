@@ -3,6 +3,26 @@ parse_get_branch() {
   git branch | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \1/'
 }
 
+deploy () {
+    echo ".env.${1}" .env
+
+    if [ -e ".env.$1" ]
+    then
+      export GIT_PUSH_DEPLOY="OK"
+      cp ".env.$1" .env && \
+      npm run prod && \
+      git add public/css/app.css && \
+      git add public/js/app.js && \
+      git add public/mix-manifest.json && \
+      git commit -m "npm run prod" && \
+      cp .env.development .env
+      npm run prod && git push
+      export GIT_PUSH_DEPLOY=
+    else
+      echo "Arquivo '.env.$1' não encontrado"
+    fi
+}
+
 alias am='git commit -am'
 alias ga='git add -A; git status'
 alias gc='git commit -m'
@@ -13,3 +33,4 @@ alias gff='git flow feature finish'
 alias pull='git pull origin $(parse_get_branch)'
 alias push='git push origin  $(parse_get_branch)'
 alias gmodified='git ls-files --modified | xargs git add'
+alias npm-checkout="git checkout public/css/app.css; git checkout public/js/app.js; git checkout public/mix-manifest.json"
