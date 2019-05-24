@@ -10,13 +10,14 @@ deploy () {
     then
       export GIT_PUSH_DEPLOY="OK"
       cp ".env.$1" .env && \
-      npm run prod && \
-      git add public/css/app.css && \
-      git add public/js/app.js && \
-      git add public/mix-manifest.json && \
-      git commit -m "npm run prod" && \
-      cp .env.development .env
-      npm run prod && git push
+        npm run prod && \
+        git add public/css/app.css && \
+        git add public/js/app.js && \
+        git add public/mix-manifest.json && \
+        git commit -m "npm run prod ($1)" && \
+        git push
+      cp .env.development .env && \
+        npm run prod
       export GIT_PUSH_DEPLOY=
     else
       echo "Arquivo '.env.$1' não encontrado"
