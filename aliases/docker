@@ -16,4 +16,5 @@ docker_restart_if_inactive () {
 }
 
 alias up='docker-compose up'
+alias workspace='docker-compose up nginx redis mysql workspace'
 alias down='docker-compose down'

@@ -4,6 +4,14 @@ parse_get_branch() {
 }
 
 deploy () {
+  if [ $1 = "--no-npm" ]
+  then
+    export GIT_PUSH_DEPLOY="OK"
+    git push
+    export GIT_PUSH_DEPLOY=
+
+    return
+  fi
     echo ".env.${1}" .env
 
     if [ -e ".env.$1" ]
@@ -13,9 +21,9 @@ deploy () {
         npm run prod && \
         git add public/css/app.css && \
         git add public/js/app.js && \
-        git add public/mix-manifest.json && \
-        git commit -m "npm run prod ($1)" && \
-        git push
+        git add public/mix-manifest.json &&
+      git commit -m "npm run prod ($1)"
+      git push
       cp .env.development .env && \
         npm run prod
       export GIT_PUSH_DEPLOY=
