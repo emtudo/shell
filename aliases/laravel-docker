@@ -3,6 +3,7 @@ laradocker () {
   DOCKER="docker-compose exec "
   DOCKER="docker exec -it"
   CONTAINER=${1:-workspace}
+  CONTAINER=$(docker ps | grep -i $CONTAINER  | head -n 1 | grep -o "[^ ]*$" | grep -o "[^ ]*")
   #if test "$status" == "workspace"
   #then
   #  CONTAINER=$(docker ps | grep -i $CONTAINER  | head -n 1 | grep -o "[^ ]*$" | grep -o "[^ ]*")
