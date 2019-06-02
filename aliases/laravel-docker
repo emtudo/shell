@@ -13,21 +13,14 @@ laradocker () {
   echo "CONTAINER: $CONTAINER"
   alias art="$DOCKER $CONTAINER php artisan"
   alias artisan="$DOCKER $CONTAINER php artisan"
-  alias migrate="$DOCKER $CONTAINER php artisan migrate"
   alias migrate:fresh="$DOCKER $CONTAINER php artisan migrate:fresh"
   alias migrate:refresh="$DOCKER $CONTAINER php artisan migrate:refresh"
   alias migrate:rollback="$DOCKER $CONTAINER php artisan migrate:rollback"
   alias refresh="$DOCKER $CONTAINER php artisan migrate:refresh —seed"
   alias rollback="$DOCKER $CONTAINER php artisan migrate:rollback"
   alias fresh="$DOCKER $CONTAINER php artisan migrate:fresh"
-  alias monitor:queries="$DOCKER $CONTAINER php artisan monitor:queries"
-  alias monitor:laravel="$DOCKER $CONTAINER php artisan monitor:laravel"
-  alias queries="$DOCKER $CONTAINER php artisan monitor:queries"
   alias tinker="$DOCKER $CONTAINER php artisan tinker"
   alias route:list="$DOCKER $CONTAINER php artisan route:list"
-  alias migrator="$DOCKER $CONTAINER php artisan migrator"
-  alias migrator:rollback="$DOCKER $CONTAINER php artisan migrator:rollback"
-  alias migrator:fresh="$DOCKER $CONTAINER php artisan migrator:fresh"
   alias queue='$DOCKER $CONTAINER php artisan queue:work --timeout=0 --tries=3'
   alias composer='$DOCKER $CONTAINER composer'
 
