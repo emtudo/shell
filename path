@@ -8,3 +8,7 @@ export PATH=$PATH:~/.config/composer/vendor/bin
 export PATH=${PATH}:${HOME}/Android/Sdk/platform-tools
 export PATH=${PATH}:${HOME}/Android/Sdk/tools
 export PATH=${PATH}:/opt/redis-desktop-manager
+
+export ANDROID_HOME=~/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/platform-tools
