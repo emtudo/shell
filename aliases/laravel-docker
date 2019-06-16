@@ -9,12 +9,8 @@ laradocker () {
   #  CONTAINER=$(docker ps | grep -i $CONTAINER  | head -n 1 | grep -o "[^ ]*$" | grep -o "[^ ]*")
   #  DOCKER="docker exec -it"
   #fi
-  if [ -z "$2" ]
-  then
-    DOCKER_USER=""
-  else
-    DOCKER_USER="--user $2"
-  fi
+  DOCKER_USER="${2:-1000}"
+  DOCKER_USER="--user $DOCKER_USER"
 
   echo "CONTAINER: $CONTAINER"
   echo "DOCKER_USER: $DOCKER_USER"
