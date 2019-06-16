@@ -1,45 +1,52 @@
 #!/bin/sh
 laradocker () {
-  DOCKER="docker-compose exec "
+  DOCKER="docker-compose exec"
   DOCKER="docker exec -it"
-  CONTAINER=${1:-workspace}
+  CONTAINER=${1:-app}
   CONTAINER=$(docker ps | grep -i $CONTAINER  | head -n 1 | grep -o "[^ ]*$" | grep -o "[^ ]*")
-  #if test "$status" == "workspace"
+  #if test "$status" == "app"
   #then
   #  CONTAINER=$(docker ps | grep -i $CONTAINER  | head -n 1 | grep -o "[^ ]*$" | grep -o "[^ ]*")
   #  DOCKER="docker exec -it"
   #fi
+  if [ -z "$2" ]
+  then
+    DOCKER_USER=""
+  else
+    DOCKER_USER="--user $2"
+  fi
 
   echo "CONTAINER: $CONTAINER"
-  alias art="$DOCKER $CONTAINER php artisan"
-  alias artisan="$DOCKER $CONTAINER php artisan"
-  alias migrate:fresh="$DOCKER $CONTAINER php artisan migrate:fresh"
-  alias migrate:refresh="$DOCKER $CONTAINER php artisan migrate:refresh"
-  alias migrate:rollback="$DOCKER $CONTAINER php artisan migrate:rollback"
-  alias refresh="$DOCKER $CONTAINER php artisan migrate:refresh —seed"
-  alias rollback="$DOCKER $CONTAINER php artisan migrate:rollback"
-  alias fresh="$DOCKER $CONTAINER php artisan migrate:fresh"
-  alias tinker="$DOCKER $CONTAINER php artisan tinker"
-  alias route:list="$DOCKER $CONTAINER php artisan route:list"
-  alias queue='$DOCKER $CONTAINER php artisan queue:work --timeout=0 --tries=3'
-  alias composer='$DOCKER $CONTAINER composer'
+  echo "DOCKER_USER: $DOCKER_USER"
+  alias art="$DOCKER $DOCKER_USER $CONTAINER php artisan"
+  alias artisan="$DOCKER $DOCKER_USER $CONTAINER php artisan"
+  alias migrate:fresh="$DOCKER $DOCKER_USER $CONTAINER php artisan migrate:fresh"
+  alias migrate:refresh="$DOCKER $DOCKER_USER $CONTAINER php artisan migrate:refresh"
+  alias migrate:rollback="$DOCKER $DOCKER_USER $CONTAINER php artisan migrate:rollback"
+  alias refresh="$DOCKER $DOCKER_USER $CONTAINER php artisan migrate:refresh —seed"
+  alias rollback="$DOCKER $DOCKER_USER $CONTAINER php artisan migrate:rollback"
+  alias fresh="$DOCKER $DOCKER_USER $CONTAINER php artisan migrate:fresh"
+  alias tinker="$DOCKER $DOCKER_USER $CONTAINER php artisan tinker"
+  alias route:list="$DOCKER $DOCKER_USER $CONTAINER php artisan route:list"
+  alias queue="$DOCKER $DOCKER_USER $CONTAINER php artisan queue:work --timeout=0 --tries=3"
+  alias composer="$DOCKER $DOCKER_USER $CONTAINER composer"
 
   # nova
-  alias nova:action="$DOCKER $CONTAINER php artisan nova:action"
-  alias nova:asset="$DOCKER $CONTAINER php artisan nova:asset"
-  alias nova:base-resource="$DOCKER $CONTAINER php artisan nova:base-resource"
-  alias nova:card="$DOCKER $CONTAINER php artisan nova:card"
-  alias nova:field="$DOCKER $CONTAINER php artisan nova:field"
-  alias nova:filter="$DOCKER $CONTAINER php artisan nova:filter"
-  alias nova:install="$DOCKER $CONTAINER php artisan nova:install"
-  alias nova:lens="$DOCKER $CONTAINER php artisan nova:lens"
-  alias nova:partition="$DOCKER $CONTAINER php artisan nova:partition"
-  alias nova:publish="$DOCKER $CONTAINER php artisan nova:publish"
-  alias nova:resource="$DOCKER $CONTAINER php artisan nova:resource"
-  alias nova:resource-tool="$DOCKER $CONTAINER php artisan nova:resource-tool"
-  alias nova:theme="$DOCKER $CONTAINER php artisan nova:theme"
-  alias nova:tool="$DOCKER $CONTAINER php artisan nova:tool"
-  alias nova:trend="$DOCKER $CONTAINER php artisan nova:trend"
-  alias nova:user="$DOCKER $CONTAINER php artisan nova:user"
-  alias nova:value="$DOCKER $CONTAINER php artisan nova:value"
+  alias nova:action="$DOCKER $DOCKER_USER $CONTAINER php artisan nova:action"
+  alias nova:asset="$DOCKER $DOCKER_USER $CONTAINER php artisan nova:asset"
+  alias nova:base-resource="$DOCKER $DOCKER_USER $CONTAINER php artisan nova:base-resource"
+  alias nova:card="$DOCKER $DOCKER_USER $CONTAINER php artisan nova:card"
+  alias nova:field="$DOCKER $DOCKER_USER $CONTAINER php artisan nova:field"
+  alias nova:filter="$DOCKER $DOCKER_USER $CONTAINER php artisan nova:filter"
+  alias nova:install="$DOCKER $DOCKER_USER $CONTAINER php artisan nova:install"
+  alias nova:lens="$DOCKER $DOCKER_USER $CONTAINER php artisan nova:lens"
+  alias nova:partition="$DOCKER $DOCKER_USER $CONTAINER php artisan nova:partition"
+  alias nova:publish="$DOCKER $DOCKER_USER $CONTAINER php artisan nova:publish"
+  alias nova:resource="$DOCKER $DOCKER_USER $CONTAINER php artisan nova:resource"
+  alias nova:resource-tool="$DOCKER $DOCKER_USER $CONTAINER php artisan nova:resource-tool"
+  alias nova:theme="$DOCKER $DOCKER_USER $CONTAINER php artisan nova:theme"
+  alias nova:tool="$DOCKER $DOCKER_USER $CONTAINER php artisan nova:tool"
+  alias nova:trend="$DOCKER $DOCKER_USER $CONTAINER php artisan nova:trend"
+  alias nova:user="$DOCKER $DOCKER_USER $CONTAINER php artisan nova:user"
+  alias nova:value="$DOCKER $DOCKER_USER $CONTAINER php artisan nova:value"
 }
