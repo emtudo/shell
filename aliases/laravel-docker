@@ -14,6 +14,8 @@ laradocker () {
 
   echo "CONTAINER: $CONTAINER"
   echo "DOCKER_USER: $DOCKER_USER"
+  alias php="$DOCKER $DOCKER_USER $CONTAINER php"
+  alias exec-docker="$DOCKER $DOCKER_USER $CONTAINER bash"
   alias art="$DOCKER $DOCKER_USER $CONTAINER php artisan"
   alias artisan="$DOCKER $DOCKER_USER $CONTAINER php artisan"
   alias migrate:fresh="$DOCKER $DOCKER_USER $CONTAINER php artisan migrate:fresh"

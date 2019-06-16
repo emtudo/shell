@@ -7,4 +7,4 @@ source ~/shell/aliases/sound
 source ~/shell/aliases/laravel-docker
 source ~/shell/aliases/npm
 
-alias nodocker="source ~/shell/index"
+alias nodocker="unalias -a; source ~/shell/index"
