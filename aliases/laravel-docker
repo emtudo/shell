@@ -9,7 +9,7 @@ laradocker () {
   #  CONTAINER=$(docker ps | grep -i $CONTAINER  | head -n 1 | grep -o "[^ ]*$" | grep -o "[^ ]*")
   #  DOCKER="docker exec -it"
   #fi
-  DOCKER_USER="${2:-1000}"
+  DOCKER_USER="${2:-$UID}"
   DOCKER_USER="--user $DOCKER_USER"
 
   echo "CONTAINER: $CONTAINER"
